@@ -1,0 +1,45 @@
+name: 'Setup Web Terminal with Zmicro'
+description: 'github action for setuping web terminal with Zmicro'
+author: 'Zero <GitHub: whatwewant>'
+branding:
+  icon: 'message-square'
+  color: 'green'
+inputs:
+  report-url:
+    required: false
+    description: specify report url
+  use-link:
+    required: false
+    description: use link to visit
+outputs:
+  random-number:
+    description: 'Random number'
+    value: ${{ steps.random-number-generator.outputs.random-number }}
+
+runs:
+  using: composite
+  steps:
+    - name: Setup Zmicro
+      uses: zmicro-design/action-setup-zmicro@v1
+
+    - name: Install Web Terminal
+      shell: bash
+      run: zmicro package install web-terminal
+
+    - name: Start Web Terminal
+      shell: bash
+      run: |
+        REPORT_URL=${{ inputs.report-url }}
+        USE_LINK=${{ inputs.use-link }}
+
+        CMD="zmicro web-terminal server"
+
+        if [ -n "$USE_LINK" ]; then
+          CMD="$CMD --user-link"
+        fi
+
+        if [ -n "$REPORT_URL" ]; then
+          CMD="$CMD --report-url $REPORT_URL"
+        fi
+
+        $CMD
