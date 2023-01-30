@@ -24,7 +24,7 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Docker
+      - name: Setup Web Terminal
         uses: zmicro-design/action-setup-web-terminal@v1
 ```
 
@@ -39,7 +39,7 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Docker
+      - name: Setup Web Terminal
         uses: zmicro-design/action-setup-web-terminal@v1
         with:
           disable-service: true
@@ -56,7 +56,7 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Docker
+      - name: Setup Web Terminal
         uses: zmicro-design/action-setup-web-terminal@v1
         with:
           report-url: https://xxxxxxxxxx
@@ -73,7 +73,7 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Docker
+      - name: Setup Web Terminal
         uses: zmicro-design/action-setup-web-terminal@v1
         with:
           use-link: true
