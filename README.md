@@ -7,7 +7,7 @@
 
 | option | required | description |
 | ------ | -------- | ----------- |
-| debug | false | start up debug service |
+| disable-service | false | do not start up service |
 | report-url | false | specify report url |
 | use-link | false | use link to visit |
 

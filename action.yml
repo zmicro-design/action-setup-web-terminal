@@ -5,7 +5,7 @@ branding:
   icon: 'message-square'
   color: 'green'
 inputs:
-  debug:
+  disable-service:
     required: false
     description: start up debug service
   report-url:
@@ -32,8 +32,8 @@ runs:
     - name: Start Web Terminal
       shell: bash
       run: |
-        DEBUG=${{ inputs.debug }}
-        if [ -z "$DEBUG" ]; then
+        DISABLE_SERVICE=${{ inputs.disable-service }}
+        if [ -n "$DISABLE_SERVICE" ]; then
           exit 0
         fi
 

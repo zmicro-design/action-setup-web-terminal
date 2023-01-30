@@ -26,6 +26,8 @@ jobs:
 
       - name: Test Setup
         uses: ./
+        with:
+          disable-service: true
 
       # Compile dist/index.js and bundle with action.yml
       # Force push major and minor tags, e.g. v1, v1.0
