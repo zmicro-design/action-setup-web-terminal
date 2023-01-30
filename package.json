@@ -1,6 +1,6 @@
 {
   "name": "@zcorky/action-setup-web-terminal",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "github action for setuping web-terminal",
   "keywords": [
     "action",
