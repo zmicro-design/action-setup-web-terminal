@@ -5,6 +5,9 @@ branding:
   icon: 'message-square'
   color: 'green'
 inputs:
+  debug:
+    required: false
+    description: start up debug service
   report-url:
     required: false
     description: specify report url
@@ -29,6 +32,11 @@ runs:
     - name: Start Web Terminal
       shell: bash
       run: |
+        DEBUG=${{ inputs.debug }}
+        if [ -z "$DEBUG" ]; then
+          exit 0
+        fi
+
         REPORT_URL=${{ inputs.report-url }}
         USE_LINK=${{ inputs.use-link }}
 
@@ -42,4 +50,5 @@ runs:
           CMD="$CMD --report-url $REPORT_URL"
         fi
 
+        echo "[$(date)] debug service starting ..."
         $CMD
