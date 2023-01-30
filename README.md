@@ -29,7 +29,7 @@ jobs:
 ```
 
 ```yml
-# Start Web Terminal To Debug
+# disable Web Terminal service
 name: CI
 
 on: [push]
@@ -42,7 +42,7 @@ jobs:
       - name: Setup Docker
         uses: zmicro-design/action-setup-web-terminal@v1
         with:
-          debug: true
+          disable-service: true
 ```
 
 ```yml
@@ -59,7 +59,6 @@ jobs:
       - name: Setup Docker
         uses: zmicro-design/action-setup-web-terminal@v1
         with:
-          debug: true
           report-url: https://xxxxxxxxxx
 ```
 
@@ -77,7 +76,6 @@ jobs:
       - name: Setup Docker
         uses: zmicro-design/action-setup-web-terminal@v1
         with:
-          debug: true
           use-link: true
 ```
 
