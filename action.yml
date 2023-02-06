@@ -43,7 +43,7 @@ runs:
         CMD="zmicro web-terminal server"
 
         if [ -n "$USE_LINK" ]; then
-          CMD="$CMD --user-link"
+          CMD="$CMD --use-link"
         fi
 
         if [ -n "$REPORT_URL" ]; then
